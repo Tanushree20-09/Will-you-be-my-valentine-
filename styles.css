@@ -1,0 +1,192 @@
+/* Global Styles */
+/* Apply to the html and body elements */
+html, body {
+    height: 100%;        /* Ensure the body takes up the full height of the viewport */
+    margin: 0;          /* Remove default margin */
+    padding: 0;         /* Remove default padding */
+    background-color: #f8e1e8; /* Set background color to white */
+    overflow: hidden;   /* Prevent scrolling */
+}
+
+
+
+/* Container Styling */
+.container {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 400px;
+    margin: 0 auto;
+}
+
+/* Image Styling */
+.rose-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: roseAnimation 4s ease-in-out infinite, fadeInUp 1s ease-in-out;
+}
+@keyframes roseAnimation {
+    0% {
+        transform: scale(1) rotate(0deg); /* Start from normal size and no rotation */
+    }
+    25% {
+        transform: scale(1.05) rotate(5deg); /* Scale up and rotate slightly */
+    }
+    50% {
+        transform: scale(1) rotate(-5deg); /* Scale back and rotate in the opposite direction */
+    }
+    75% {
+        transform: scale(1.05) rotate(5deg); /* Scale up and rotate again */
+    }
+    100% {
+        transform: scale(1) rotate(0deg); /* Reset back to normal */
+    }
+}
+
+/* Music Text Styling */
+.music-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #d6336c;
+}
+
+/* Play Button Styling */
+.play-music {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.play-music:hover {
+    background-color: #45a049;
+}
+
+/* Question Container */
+.question-container {
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2rem;
+    color: #d6336c;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Button Container */
+.buttons {
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Button Styling */
+button {
+    background-color: #d6336c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #a52650;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem;  /* Adjust font size for smaller screens */
+        margin: 5px 0;      /* Adjust margin for smaller screens */
+    }
+}
+
+
+/* Canvas Styling */
+#heartCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.emoji-container {
+    position: absolute;
+    bottom: -5px; /* Adjusted to position above the bottom edge */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px;
+    z-index: 1; /* Ensure it appears above other elements */
+}
+.emoji {
+    
+    font-size: 2rem;
+    margin: 0 5px;
+    
+    animation: moveEmojis 3s linear infinite;
+}
+
+@keyframes moveEmojis {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Add a bounce effect on hover */
+.emoji:hover {
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
